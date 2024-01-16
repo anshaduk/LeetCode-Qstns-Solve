@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let celsius = 36.5;
+      var convertTemperature = function (celsius) {
+        const arr = [];
+        arr.push(celsius + 273.15, celsius * 1.8 + 32.0);
+        return arr;
+      };
+      console.log(convertTemperature(celsius));
+    </script>
+  </body>
+</html>
