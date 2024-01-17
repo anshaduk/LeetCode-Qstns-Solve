@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let names = ["Mary", "John", "Emma"];
+      let heights = [180, 165, 170];
+      var sortPeople = function (names, heights) {
+        let people = names.map((name, index) => ({
+          name,
+          height: heights[index],
+        }));
+        people.sort((a, b) => b.height - a.height);
+        let sortedName = people.map((person) => person.name);
+        console.log(sortedName);
+      };
+      sortPeople(names, heights);
+    </script>
+  </body>
+</html>
