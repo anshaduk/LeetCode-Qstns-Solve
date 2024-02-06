@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        strs = ["eat","tea","tan","ate","nat","bat"]
+      var groupAnagrams = function (strs) {
+        const anagrams = {};
+
+        for (const word of strs) {
+          // Sort the characters of the word to create a unique representation
+          const sortedWord = word.split("").sort().join("");
+
+          // Add the sorted word to the hashmap
+          if (anagrams[sortedWord]) {
+            anagrams[sortedWord].push(word);
+          } else {
+            anagrams[sortedWord] = [word];
+          }
+        }
+
+        // Convert the values of the hashmap into an array of arrays
+        const groupedAnagrams = Object.values(anagrams);
+
+        return groupedAnagrams;
+      };
+      console.log(groupAnagrams(strs));
+    </script>
+  </body>
+</html>
