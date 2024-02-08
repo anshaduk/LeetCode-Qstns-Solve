@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        n = 12
+        var numSquares = function(n) {
+    const dp = new Array(n + 1).fill(Infinity);
+    dp[0] = 0;
+
+    for (let i = 1; i <= n; i++) {
+        for (let j = 1; j * j <= i; j++) {
+            dp[i] = Math.min(dp[i], dp[i - j * j] + 1);
+        }
+    }
+
+    return dp[n];
+}
+console.log(numSquares(n));
+    </script>
+</body>
+</html>
