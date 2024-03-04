@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      nums = [0, 2, 1, 5, 3, 4];
+      var buildArray = function (nums) {
+        const n = nums.length;
+        const resultArray = new Array(n);
+
+        for (let i = 0; i < n; i++) {
+          resultArray[i] = nums[nums[i]];
+        }
+
+        return resultArray;
+      };
+      let res = buildArray(nums);
+      console.log(res);
+    </script>
+  </body>
+</html>

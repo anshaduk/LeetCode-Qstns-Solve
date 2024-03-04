@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        arr = [1,15,7,9,2,5,10], k = 3
+      var maxSumAfterPartitioning = function (arr, k) {
+        const n = arr.length;
+        const dp = new Array(n).fill(0);
+
+        for (let i = 0; i < n; i++) {
+          let maxVal = 0;
+          for (let j = 1; j <= k && i - j + 1 >= 0; j++) {
+            maxVal = Math.max(maxVal, arr[i - j + 1]);
+            if (i - j >= 0) {
+              dp[i] = Math.max(dp[i], dp[i - j] + maxVal * j);
+            } else {
+              dp[i] = Math.max(dp[i], maxVal * j);
+            }
+          }
+        }
+
+        return dp[n - 1];
+      };
+      console.log(maxSumAfterPartitioning(arr,k));
+    </script>
+  </body>
+</html>
